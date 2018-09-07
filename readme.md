@@ -1,18 +1,66 @@
-- router.get('/', snacksController.index)
+# galvanize-snacks-api
 
-- router.get('/:id', snacksController.show)
+An api using Python, Flask, SQLAlchemy
 
-- router.post('/', snacksController.create)
+## Setup
+1. Fork and clone this repository
+1. `createdb galvanize-snacks-python-api/`
+1. `PYTHONPATH=../ python snack_seeds.py`
+1. `PYTHONPATH=../ python review_seeds.py`
+1. `python app.py`
 
-- router.patch('/:id', snacksController.update)
+## Routes
 
-- router.delete('/:id', snacksController.destroy)
+**GET /snacks**
 
+**GET /snacks/featured**
 
-- router.post('/', reviewsController.create)
+**GET /snacks/<int:id>**
 
-- router.patch('/:revId', reviewsController.update)
+**POST /api/snacks**
+- required fields in body:
+```
+{
+    name,           // STRING
+    description,    // STRING
+    price,          // FLOAT
+    img,            // STRING
+    is_perishable   // BOOLEAN
+}
+```
 
-- router.delete('/:revId', reviewsController.destroy)
+**POST /snacks/<int:id>/reviews**
+- required fields in body:
+```
+{
+    title,          // STRING
+    text,           // STRING
+    rating,         // INTEGER
+}
+```
 
-- router.get('/featured', snacksController.featured)
+**PATCH /snacks/<int:id>**
+- at least one(1) of the following fields in body is required:
+```
+{
+    name,           // STRING
+    description,    // STRING
+    price,          // FLOAT
+    img,            // STRING
+    is_perishable   // BOOLEAN
+}
+```
+
+**PATCH /snacks/<int:snack_id>/reviews/:id**
+- at least one(1) of the following fields in body is required:
+```
+{
+    title,          // STRING
+    text,           // STRING
+    rating,         // INTEGER
+}
+```
+
+**DELETE /snacks/<int:snack_id>**
+
+**DELETE /snacks/<int:snack_id>/reviews/:id**
