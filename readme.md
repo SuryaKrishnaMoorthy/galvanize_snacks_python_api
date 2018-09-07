@@ -1,18 +1,18 @@
-## -- completed router.get('/', snacksController.index)
+- router.get('/', snacksController.index)
 
-## -- completed router.get('/:id', snacksController.show)
+- router.get('/:id', snacksController.show)
 
-## -- completed router.post('/', snacksController.create)
+- router.post('/', snacksController.create)
 
-## -- completed router.patch('/:id', snacksController.update)
+- router.patch('/:id', snacksController.update)
 
-## -- completed router.delete('/:id', snacksController.destroy)
+- router.delete('/:id', snacksController.destroy)
 
 
-## -- completed router.post('/', reviewsController.create)
+- router.post('/', reviewsController.create)
 
-## -- completed router.patch('/:revId', reviewsController.update)
+- router.patch('/:revId', reviewsController.update)
 
-## -- completed router.delete('/:revId', reviewsController.destroy)
+- router.delete('/:revId', reviewsController.destroy)
 
-## -- completed router.get('/featured', snacksController.featured)
+- router.get('/featured', snacksController.featured)
